@@ -12,10 +12,18 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         if (username.equals("admin") && password.equals("password")) {
             response.sendRedirect("/profile.jsp");
+        } else {
+            response.sendRedirect("/login");
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/login.jsp").forward(request, response);
+
+    if (request.getSession().getAttribute("user") !=null) {
+        response.sendRedirect("/profile");
+        return;
+    }
+
     }
 }

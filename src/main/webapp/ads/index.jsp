@@ -10,6 +10,7 @@
 <jsp:include page="../partials/navbar.jsp" />
 <div class="container">
     <h1>Welcome to D-Lister</h1>
+    <h3>This website is for: </h3>
 </div>
 </body>
 </html>
